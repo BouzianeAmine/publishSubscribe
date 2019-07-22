@@ -2,13 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Publisher = /** @class */ (function () {
     function Publisher() {
+        // tslint:disable-next-line:indent
         this.message = null;
     }
+    // tslint:disable-next-line:member-ordering
     Publisher.getInstance = function () {
         if (Publisher.instance == null) {
-            // Le mot-clé synchronized sur ce bloc empêche toute instanciation
-            // multiple même par différents "threads".
-            // Il est TRES important.
             Publisher.instance = new Publisher();
         }
         return Publisher.instance;
