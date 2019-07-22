@@ -2,13 +2,13 @@
   "name": "amine",
   "version": "1.0.0",
   "description": "Publish subscribe",
-  "main": "/dist/main/main.js",
+  "main": "/dist/test/main.js",
   "dependencies": {
     "typescript": "^3.5.3"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node C:/Users/bouziane/Desktop/publishers/dist/main/main.js"
+    "test": "node dist/test/main.js"
   },
   "author": "Amine bouziane",
   "license": "ISC"

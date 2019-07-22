@@ -20,6 +20,7 @@ var Publisher = /** @class */ (function () {
         // TODO Auto-generated method stub
         return this.message;
     };
+    // tslint:disable-next-line:member-ordering
     Publisher.instance = null;
     return Publisher;
 }());

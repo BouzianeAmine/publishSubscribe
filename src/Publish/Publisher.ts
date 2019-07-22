@@ -1,8 +1,9 @@
-import { PublisherBehavior } from "./PublisherBehavior";
-import { Message } from "./Message";
+import { Message } from '../Message/Message';
+import { PublisherBehavior } from '../Publish/PublisherBehavior';
 
 export class Publisher implements PublisherBehavior{
-	private message : any = null ;
+	private message: any = null ;
+    // tslint:disable-next-line:member-ordering
     public static instance: any = null;
 
 	private constructor() {}
