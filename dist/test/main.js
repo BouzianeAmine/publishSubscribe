@@ -4,6 +4,7 @@ var TextMessage_1 = require("../Message/TextMessage");
 var Publisher_1 = require("../Publish/Publisher");
 var Server_1 = require("../Server/Server");
 var Subscriber_1 = require("../Subscribe/Subscriber");
+var Socket_1 = require("../TransmissionWays/Socket");
 var Main = /** @class */ (function () {
     function Main() {
         this.sub = new Subscriber_1.Subscriber();
@@ -11,10 +12,10 @@ var Main = /** @class */ (function () {
         this.sub.subscribe(Publisher_1.Publisher.getInstance());
         Publisher_1.Publisher.getInstance().publish(new TextMessage_1.TextMessage('hello'));
         this.sub.receive().forEach(function (message) {
-            // tslint:disable-next-line:no-console
             console.log(message.value());
         });
-        this.server.listen();
+        this.socket = new Socket_1.Socket(this.server.listen());
+        this.socket.connect(Publisher_1.Publisher.getInstance());
     }
     return Main;
 }());

@@ -1,5 +1,5 @@
 // tslint:disable-next-line:no-var-requires
-const express = require('express');
+import express from 'express';
 
 export class Server {
     private app: any ;
@@ -16,7 +16,6 @@ export class Server {
     public listen() {
         this.listening = true;
         this.app.listen(this.port, () => {
-            // tslint:disable-next-line:no-console
             console.log(`Listening at http://${this.host}:${this.port}/`);
         });
     }

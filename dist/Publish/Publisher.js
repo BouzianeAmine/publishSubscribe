@@ -5,7 +5,6 @@ var Publisher = /** @class */ (function () {
         // tslint:disable-next-line:indent
         this.message = null;
     }
-    // tslint:disable-next-line:member-ordering
     Publisher.getInstance = function () {
         if (Publisher.instance == null) {
             Publisher.instance = new Publisher();
@@ -16,10 +15,8 @@ var Publisher = /** @class */ (function () {
         this.message = value;
     };
     Publisher.prototype.getMessage = function () {
-        // TODO Auto-generated method stub
         return this.message;
     };
-    // tslint:disable-next-line:member-ordering
     Publisher.instance = null;
     return Publisher;
 }());

@@ -1,9 +1,10 @@
 import { Message } from '../Message/Message';
 import { PublisherBehavior } from '../Publish/PublisherBehavior';
 import { SubscriberBehavior } from './SubscriberBehavior';
+import { Publisher } from '../Publish/Publisher';
 
 export class Subscriber implements SubscriberBehavior {
-	private publishers: PublisherBehavior[];
+	public publishers: PublisherBehavior[];
 
 	public constructor() {
 		this.publishers = new Array<PublisherBehavior>();
