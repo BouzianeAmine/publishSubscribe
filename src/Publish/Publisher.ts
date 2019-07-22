@@ -9,13 +9,10 @@ export class Publisher implements PublisherBehavior{
 	private constructor() {}
 	
 	public  static getInstance(): Publisher {
-		if (Publisher.instance == null) {
-            // Le mot-clé synchronized sur ce bloc empêche toute instanciation
-            // multiple même par différents "threads".
-            // Il est TRES important.
-            Publisher.instance = new Publisher();
-         }
-         return Publisher.instance;
+	   if (Publisher.instance == null) {
+           	 Publisher.instance = new Publisher();
+            }
+            return Publisher.instance;
 	}
 	
 	public publish(value: Message<any>) : void{
