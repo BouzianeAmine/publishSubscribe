@@ -1,21 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var TextMessage_1 = require("../Message/TextMessage");
+var TextMessage_1 = require("../Published/TextMessage");
 var Publisher_1 = require("../Publish/Publisher");
-var Server_1 = require("../Server/Server");
 var Subscriber_1 = require("../Subscribe/Subscriber");
-var Socket_1 = require("../TransmissionWays/Socket");
 var Main = /** @class */ (function () {
+    /*public server: Server;
+    public socket : Socket;*/
     function Main() {
         this.sub = new Subscriber_1.Subscriber();
-        this.server = new Server_1.Server();
+        //this.server = new Server();
         this.sub.subscribe(Publisher_1.Publisher.getInstance());
-        Publisher_1.Publisher.getInstance().publish(new TextMessage_1.TextMessage('hello'));
+        var msg = new TextMessage_1.TextMessage('Yo');
+        Publisher_1.Publisher.getInstance().publish(msg);
         this.sub.receive().forEach(function (message) {
-            console.log(message.value());
+            console.log(message.content());
         });
-        this.socket = new Socket_1.Socket(this.server.listen());
-        this.socket.connect(Publisher_1.Publisher.getInstance());
+        /*this.socket=new Socket(this.server.listen());
+        this.socket.connect(Publisher.getInstance());*/
     }
     return Main;
 }());

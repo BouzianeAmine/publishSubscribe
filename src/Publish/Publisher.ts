@@ -1,4 +1,4 @@
-import { Message } from '../Message/Message';
+import { Message } from '../Published/Message';
 import { PublisherBehavior } from '../Publish/PublisherBehavior';
 
 export class Publisher implements PublisherBehavior {

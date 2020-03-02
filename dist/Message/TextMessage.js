@@ -4,11 +4,8 @@ var TextMessage = /** @class */ (function () {
     function TextMessage(value) {
         this.container = value;
     }
-    TextMessage.prototype.value = function () {
+    TextMessage.prototype.content = function () {
         // TODO Auto-generated method stub
-        return this.getValue();
-    };
-    TextMessage.prototype.getValue = function () {
         return this.container;
     };
     TextMessage.prototype.setValue = function (value) {
